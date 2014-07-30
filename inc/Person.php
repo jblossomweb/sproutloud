@@ -1,5 +1,8 @@
 <?php 
 
+// this is the base class of Person.
+// it is extended by Runner, which is a type of Person.
+
 class Person {
 	
 	protected $name; //string 
@@ -28,11 +31,16 @@ class Person {
 	}
 
 	public function walk($distance){
-		$distance = intval($distance);
+		$distance = intval($distance); //meters
+		for($d=1;$d<=$distance;$d++){
+			$this->travelMeter();
+		}
 	}
 
 	public function getAge(){
-        return intval(1);
+        $now = new DateTime("now");
+        $age = $now->diff($this->birth);
+        return $age->y;
 	}
 
 	protected function travelMeter(){ //travel 1 meter
