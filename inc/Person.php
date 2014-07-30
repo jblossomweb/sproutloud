@@ -15,8 +15,13 @@ class Person {
 		$this->weight = floatval(180);
 	}
 
+	// 3: this method should output to the console all the words 
+	//    concatenated and separated by a white space.
 	public function speak($words){
-		$words = strval($words);
+		$words = explode(" ", strval($words));
+		foreach ($words as $word) {
+			echo "$word\n";
+		}
 	}
 
 	public function walk($distance){
