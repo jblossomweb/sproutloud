@@ -7,12 +7,15 @@ class Person {
 	protected $height; //float
 	protected $weight; //float
 
+	public $traveled; //int (not defined in UML)
+
 	// 2: the constructor should set default values for all the class properties.
 	public function __construct(){
 		$this->name = "John Blossom";
 		$this->birth = new DateTime("17 December 1981"); //php 5.3+
 		$this->height = floatval(6);
 		$this->weight = floatval(180);
+		$this->traveled = 0;
 	}
 
 	// 3: this method should output to the console all the words 
@@ -30,6 +33,10 @@ class Person {
 
 	public function getAge(){
         return intval(1);
+	}
+
+	protected function travelMeter(){ //travel 1 meter
+		$this->traveled++;
 	}
 
 }
